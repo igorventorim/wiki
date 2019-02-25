@@ -2,10 +2,8 @@
 <!-- SUBTITLE: Um guia rápido de comandos docker -->
 	
 ## [ INSTALAÇÃO DOCKER ] 
-
-### Ubuntu:
-
 #### 	DOCUMENTATION https://docs.docker.com/install/
+### Ubuntu:
 
 * 	 INSTALANDO O DOCKER
 	`curl -fsSL https://get.docker.com/ | sh		`
