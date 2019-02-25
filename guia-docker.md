@@ -1,9 +1,9 @@
 <!-- TITLE: Guia Docker -->
 <!-- SUBTITLE: Um guia rápido de comandos docker -->
 	
-** [ INSTALAÇÃO DOCKER ] **
+## [ INSTALAÇÃO DOCKER ] 
 
-Ubuntu:
+### Ubuntu:
 
 #### 	DOCUMENTATION https://docs.docker.com/install/
 
@@ -11,7 +11,7 @@ Ubuntu:
 	`curl -fsSL https://get.docker.com/ | sh		`
 
 
-* CentOS:
+### CentOS:
 
 	
 ```sh
