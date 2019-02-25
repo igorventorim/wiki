@@ -36,14 +36,14 @@
 
  ### Métodos importantes
 
-    * Método responsável por extrair uma lista de seletores baseado na query.
-    `response.css("<CSS PATH>").extract_all()` ou `response.css("<CSS PATH>").getall()` ou `response.xpath("<CSS PATH>").getall()`
+*     * Método responsável por extrair uma lista de seletores baseado na query.
+`response.css("<CSS PATH>").extract_all()` ou `response.css("<CSS PATH>").getall()` ou `response.xpath("<CSS PATH>").getall()`
 
-    * Método responsável por extrair um elemento da lista de seletores baseado na query.
-    `response.css("<CSS PATH>").extract_first()` ou `response.css("<CSS PATH>").get()` ou `response.xpath("<CSS PATH>").get()`
+*     * Método responsável por extrair um elemento da lista de seletores baseado na query.
+  `response.css("<CSS PATH>").extract_first()` ou `response.css("<CSS PATH>").get()` ou `response.xpath("<CSS PATH>").get()`
 
-    * Forma de tomar uma ação baseada no resultado
-    `yield <action>`
+*     * Forma de tomar uma ação baseada no resultado
+`yield <action>`
 
 
 
