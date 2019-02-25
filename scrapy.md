@@ -7,7 +7,7 @@
 
  ## Conceitos básicos
 
- * Como utilizar
+ ### Como utilizar
    
    ```
    #Importar o scrapy
@@ -28,13 +28,13 @@
    			pass
    ```
 
- * Tipos de extratores
- 	* Consultando resposta baseado em query xpath
- 	`response.xpath()`
- 	* Consultando resposta baseado em query css
+ ### Tipos de extratores
+* Consultando resposta baseado em query xpath
+`response.xpath()`
+* Consultando resposta baseado em query css
  	`response.css()`
 
- * Métodos importantes
+ ### Métodos importantes
 
     * Método responsável por extrair uma lista de seletores baseado na query.
     `response.css("<CSS PATH>").extract_all()` ou `response.css("<CSS PATH>").getall()` ou `response.xpath("<CSS PATH>").getall()`
