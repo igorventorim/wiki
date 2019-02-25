@@ -3,7 +3,7 @@
 
 										# ____ ESTUDOS DOCKER ____
 	
-========================================> [ INSTALAÇÃO DOCKER ] <===================================================
+** [ INSTALAÇÃO DOCKER ] **
 
 Ubuntu:
 
@@ -49,286 +49,283 @@ CentOS:
 	#Test
 	sudo docker run hello-world
 
-=========================================>  [COMANDOS BÁSICOS DOCKER ] <==========================================
+##  [COMANDOS BÁSICOS DOCKER ]
 
-docker run hello-world						#EXECUTA O PRIMEIRO CONTAINER DOCKER PARA TESTAR SE O DOCKER FOI INSTALADO CORRETAMENTE.
+* docker run hello-world						#EXECUTA O PRIMEIRO CONTAINER DOCKER PARA TESTAR SE O DOCKER FOI INSTALADO CORRETAMENTE.
 
-docker images								#EXIBI AS IMAGENS DOCKER BAIXADAS NO PROJETO.
+* docker images								#EXIBI AS IMAGENS DOCKER BAIXADAS NO PROJETO.
 
-docker ps									#EXIBI OS CONTAINERS EM EXECUÇÃO.
+* docker ps									#EXIBI OS CONTAINERS EM EXECUÇÃO.
 
-docker ps -a 								#EXIBI TODOS OS CONTAINERS.
+* docker ps -a 								#EXIBI TODOS OS CONTAINERS.
 
-docker create <image>						#CRIA O CONTAINER MAS NÃO O EXECUTA.
+* docker create <image>						#CRIA O CONTAINER MAS NÃO O EXECUTA.
 
-docker run -it ubuntu /bin/bash				# -it: Interative Terminal   - ubuntu: Distribuição   - /bin/bash: COMANDO TERMINAL
+* docker run -it ubuntu /bin/bash				# -it: Interative Terminal   - ubuntu: Distribuição   - /bin/bash: COMANDO TERMINAL
 
-docker attach <CONTAINER_ID>				#ENTRA NO TERMINAL INTERATIVO DE UM CONTAINER EM EXECUÇÃO
-docker exec -ti <CONTAINER_ID> bash         #ENTRA NO TERMINAL INTERATIVO DE UM CONTAINER EM EXECUÇÃO
+* docker attach <CONTAINER_ID>				#ENTRA NO TERMINAL INTERATIVO DE UM CONTAINER EM EXECUÇÃO
+* 
+* docker exec -ti <CONTAINER_ID> bash         #ENTRA NO TERMINAL INTERATIVO DE UM CONTAINER EM EXECUÇÃO
 
-docker start <CONTAINER_ID>					#INICIALIZA O CONTAINER
+* docker start <CONTAINER_ID>					#INICIALIZA O CONTAINER
 
-docker stop <CONTAINER_ID>					#PARA O CONTAINER
+* docker stop <CONTAINER_ID>					#PARA O CONTAINER
 
-docker pause <CONTAINER_ID>					#PAUSA O CONTAINER
+* docker pause <CONTAINER_ID>					#PAUSA O CONTAINER
 
-docker unpause <CONTAINER_ID>				#DESPAUSA O CONTAINER
+* docker unpause <CONTAINER_ID>				#DESPAUSA O CONTAINER
 
-docker stats <CONTAINER_ID>					#EXIBE OS RECURSOS CONSUMIDOS PELO CONTAINER
+* docker stats <CONTAINER_ID>					#EXIBE OS RECURSOS CONSUMIDOS PELO CONTAINER
 
-docker top <CONTAINER_ID>					#EXIBE OS PROCESSOS SENDO EXECUTADOS NO CONTAINER
+* docker top <CONTAINER_ID>					#EXIBE OS PROCESSOS SENDO EXECUTADOS NO CONTAINER
 
-docker logs <CONTAINER_ID>					#EXIBE OS LOGS DE TUDO QUE FOI EXECUTADO NO CONTAINER
+* docker logs <CONTAINER_ID>					#EXIBE OS LOGS DE TUDO QUE FOI EXECUTADO NO CONTAINER
 
-docker logs -t <CONTAINER_ID>				#LOG INTERATIVO DO CONTAINER
+* docker logs -t <CONTAINER_ID>				#LOG INTERATIVO DO CONTAINER
 
-docker rm <CONTAINER_ID>					#REMOVE SOMENTE O CONTAINER SE ESTIVER DESATIVADO
+* docker rm <CONTAINER_ID>					#REMOVE SOMENTE O CONTAINER SE ESTIVER DESATIVADO
 
-docker rm -f <CONTAINER_ID>					#REMOVE O CONTAINER ATÉ MESMO ATIVADO
+* docker rm -f <CONTAINER_ID>					#REMOVE O CONTAINER ATÉ MESMO ATIVADO
 
-docker rmi -f <IMAGE_ID>					#REMOVE UMA IMAGEM DA MÁQUINA
+* docker rmi -f <IMAGE_ID>					#REMOVE UMA IMAGEM DA MÁQUINA
 
-docker exec <CONTAINER_ID> <COMMAND>		#EXECUTA O COMANDO DENTRO DO CONTAINER
+* docker exec <CONTAINER_ID> <COMMAND>		#EXECUTA O COMANDO DENTRO DO CONTAINER
 
-docker run <parammeters> <image>:<version> <command>
-PARAMMETERS:
--it:							#Terminal interativo
--d:								#Execução em background
---name <name>:					#Determina um nome para o container
---memory|-m <value>m			#Determina o limite de memória do container
---cpu-shares <value>			#Determina o limite de cpu do container
--v <volume_name>				#Cria um volume que será compartilhado entre o host e o container
--v <pathHost>:/<volume_name>	#Faz o link do volume no container com um repositório no host
--e VARIABLE=VALUE				#Cria variável de ambiente
---volumes-from <CONTAINER_ID>	#Importa o volume de um determinado container
--p HOST_PORT:CONTAINER_PORT		#Seta a porta de comunicação entre o container e o host
---restart=always				#Container sempre rebootavel
+* docker run <parammeters> <image>:<version> <command>
+	**PARAMMETERS:**
+	* -it:							#Terminal interativo
+	* -d:								#Execução em background
+	* --name <name>:					#Determina um nome para o container
+	* --memory|-m <value>m			#Determina o limite de memória do container
+	* --cpu-shares <value>			#Determina o limite de cpu do container
+	* -v <volume_name>				#Cria um volume que será compartilhado entre o host e o container
+	* -v <pathHost>:/<volume_name>	#Faz o link do volume no container com um repositório no host
+	* -e VARIABLE=VALUE				#Cria variável de ambiente
+	* --volumes-from <CONTAINER_ID>	#Importa o volume de um determinado container
+	* -p HOST_PORT:CONTAINER_PORT		#Seta a porta de comunicação entre o container e o host
+	* --restart=always				#Container sempre rebootavel
 
 
-[COMANDOS NO CONTAINER] 
+## [COMANDOS NO CONTAINER] 
 
-CTRL + P + Q: Sai do container sem finalizar.
+* CTRL + P + Q: Sai do container sem finalizar.
 
-CTRL + D: Finaliza o container.
+* CTRL + D: Finaliza o container.
 
-=====================================> [COMANDOS INTERMEDIÁRIOS DOCKER ] <==========================================
+##  [COMANDOS INTERMEDIÁRIOS DOCKER ] 
 
-docker inspect <CONTAINER_ID>							#EXIBI TODAS AS INFORMAÇÕES REFERENTE AO CONTAINER
+* docker inspect <CONTAINER_ID>							#EXIBI TODAS AS INFORMAÇÕES REFERENTE AO CONTAINER
 
-docker inspect <CONTAINER_ID> | grep -i mem				#INSPENCIONA A QUANTIDADE DE MEMÓRIA ALOCADA AO CONTAINER
+* docker inspect <CONTAINER_ID> | grep -i mem				#INSPENCIONA A QUANTIDADE DE MEMÓRIA ALOCADA AO CONTAINER
 			"Memory": 0		=> 0 SIGNIFICA VALOR DE MEMÓRIA INDEFINIDO.
 
-docker inspect <CONTAINER_ID> | grep -i cpu				#INSPECIONA QUANTIDADE DE CPU ALOCADA
+* docker inspect <CONTAINER_ID> | grep -i cpu				#INSPECIONA QUANTIDADE DE CPU ALOCADA
 
-docker inspect -f {{.Mounts}} <CONTAINER_ID>			#INSPECIONA O VOLUME DO CONTAINER, EXIBINDO O SEU PATH NO HOST
+* docker inspect -f {{.Mounts}} <CONTAINER_ID>			#INSPECIONA O VOLUME DO CONTAINER, EXIBINDO O SEU PATH NO HOST
 
-docker update -m <Value>m <CONTAINER_ID>				#ATUALIZA O LIMITE DE MEMÓRIA DO CONTAINER
+* docker update -m <Value>m <CONTAINER_ID>				#ATUALIZA O LIMITE DE MEMÓRIA DO CONTAINER
 
-docker update --cpu-shares <Value> <CONTAINER_ID>		#ATUALIZA O LIMITE DE CPU DO CONTAINER
+* docker update --cpu-shares <Value> <CONTAINER_ID>		#ATUALIZA O LIMITE DE CPU DO CONTAINER
 
-docker build -t <image name:vesion> <DOCKER_FILE_PATH>	#CONSTROI A IMAGEM
+* docker build -t <image name:vesion> <DOCKER_FILE_PATH>	#CONSTROI A IMAGEM
 
 
-============================================> [EXEMPLOS] <=====================================================
-docker run -it --memory 256m --cpu-shares 512 --name teste ubuntu	#CRIA UM CONTAINER COM TERMINAL INTERATIVO MEMÓRIA LIMITADA A 256MiB e CPU também limitado, tendo como nome teste.
+##  [EXEMPLOS]
+* docker run -it --memory 256m --cpu-shares 512 --name teste ubuntu	#CRIA UM CONTAINER COM TERMINAL INTERATIVO MEMÓRIA LIMITADA A 256MiB e CPU também limitado, tendo como nome teste.
 
 
-============================================> [DOCKERFILE] <=================================================== 
+## [DOCKERFILE]
 
-- Dockerfile é semelhante a um makefile. A partir de um Dockerfile você cria uma imagem.
+>  Dockerfile é semelhante a um makefile. A partir de um Dockerfile você cria uma imagem.
 
-FROM <ubuntu>						    => DETERMINA A IMAGEM BASE DO CONTAINER
+* FROM <ubuntu>						    => DETERMINA A IMAGEM BASE DO CONTAINER 
 
-MAINTAINER <IGOR VENTORIM>				=> RESPONSÁVEL PELO DOCKERFILE
+* MAINTAINER <IGOR VENTORIM>				=> RESPONSÁVEL PELO DOCKERFILE
 
-RUN <apt-get update && apt-get install apache2> 		=> UTILIZADO PARA INSTALAÇÃO DE PACOTES/ QUANTO MENOS RUN MELHOR POR CAUSA QUE CRIA MENOS CAMADAS - CONCATENE COMANDOS AO MÁXIMO.
+* RUN <apt-get update && apt-get install apache2> 		=> UTILIZADO PARA INSTALAÇÃO DE PACOTES/ QUANTO MENOS RUN MELHOR POR CAUSA QUE CRIA MENOS CAMADAS - CONCATENE COMANDOS AO MÁXIMO.
 
-ADD opa.txt /diretorio/					=> COPIA QUALQUER ARQUIVO DO HOST PARA O CONTAINER
+* ADD opa.txt /diretorio/					=> COPIA QUALQUER ARQUIVO DO HOST PARA O CONTAINER
 
-CMD ["sh", "-c", "echo", "$HOME"]			=> CMD é um parâmetro do entrypoint
+* CMD ["sh", "-c", "echo", "$HOME"]			=> CMD é um parâmetro do entrypoint
 
-LABEL Description="Lorem ipsum"				=> Adicionar meta dado ao container, como nome do fabricante e etc...
+* LABEL Description="Lorem ipsum"				=> Adicionar meta dado ao container, como nome do fabricante e etc...
 
-COPY opa.txt /diretorio/				=> COPIA ALGUNS TIPOS DE ARQUIVOS DO HOST PARA O CONTAINER
+* COPY opa.txt /diretorio/				=> COPIA ALGUNS TIPOS DE ARQUIVOS DO HOST PARA O CONTAINER
 
-ENTRYPOINT ["/usr/bin/apache2ctl", "-D", "FOREGROUND"]	=> PERMITI QUE UM PROCESSO SEJA O PRINCIPAL PROCESSO DO CONTAINER, CASO ELE MORRA O CONTAINER MORRE.
+* ENTRYPOINT ["/usr/bin/apache2ctl", "-D", "FOREGROUND"]	=> PERMITI QUE UM PROCESSO SEJA O PRINCIPAL PROCESSO DO CONTAINER, CASO ELE MORRA O CONTAINER MORRE.
 
-ENV meunome="Igor Ventorim"				=> CONFIGURE VARIÁVEIS DE AMBIENTE E ENVIA PARA DENTRO DO CONTAINER
+* ENV meunome="Igor Ventorim"				=> CONFIGURE VARIÁVEIS DE AMBIENTE E ENVIA PARA DENTRO DO CONTAINER
 
-EXPOSE 80						=> EXPÕE A PORTA QUE SERÁ UTILIZADA PELO CONTAINER
+* EXPOSE 80						=> EXPÕE A PORTA QUE SERÁ UTILIZADA PELO CONTAINER
 
-USER username						=> DEFINI QUAL O USUÁRIO DO CONTAINER
+* USER username						=> DEFINI QUAL O USUÁRIO DO CONTAINER
 
-WORKDIR	/rootpath					=> DEFINI O DIRETÓRIO RAIZ DO CONTAINER
+* WORKDIR	/rootpath					=> DEFINI O DIRETÓRIO RAIZ DO CONTAINER
 
-VOLUME	/diretorio					=> CRIA O VOLUME DO CONTAINER
+* VOLUME	/diretorio					=> CRIA O VOLUME DO CONTAINER
 
-ONBUILD								=> DEFINI ALGUMAS INSTRUÇÕES A SEREM EXECUTADAS QUANDO UMA AÇÃO FOR REALIZADA
+* ONBUILD								=> DEFINI ALGUMAS INSTRUÇÕES A SEREM EXECUTADAS QUANDO UMA AÇÃO FOR REALIZADA
 
 
 
-===============================================> [DOCKER HUB] <=====================================================
+## [DOCKER HUB]
 
-- Docker Hub é semelhante ao github, no entanto ele guarda imagens de containers em vez de código fonte.
+> Docker Hub é semelhante ao github, no entanto ele guarda imagens de containers em vez de código fonte. SITE: https://hub.docker.com/
 
-SITE: https://hub.docker.com/
+* docker inspect <IMAGE_NAME>:<VERSION>			#INSPECIONA A IMAGEM
 
-docker inspect <IMAGE_NAME>:<VERSION>			#INSPECIONA A IMAGEM
+* docker history <IMAGE_NAME>:<VERSION> 			#EXIBI O HISTÓRICO DE CAMADAS
 
-docker history <IMAGE_NAME>:<VERSION> 			#EXIBI O HISTÓRICO DE CAMADAS
+* docker tag <IMAGE_ID> <USERNAME>/<IMAGE_NAME>	#RENOMEIA UMA IMAGEM. IMAGEM PADRÃO DOCKERHUB
 
-docker tag <IMAGE_ID> <USERNAME>/<IMAGE_NAME>	#RENOMEIA UMA IMAGEM. IMAGEM PADRÃO DOCKERHUB
+* docker login									#REALIZA O LOGIN NO DOCKER HUB
 
-docker login									#REALIZA O LOGIN NO DOCKER HUB
+* docker push <IMAGE_ID>							#REALIZA O UPLOAD DA IMAGEM PARA O DOCKERHUB
 
-docker push <IMAGE_ID>							#REALIZA O UPLOAD DA IMAGEM PARA O DOCKERHUB
+* docker pull	<USERNAME>/<IMAGE_NAME>				#REALIZA O DOWNLOAD DA IMAGEM
 
-docker pull	<USERNAME>/<IMAGE_NAME>				#REALIZA O DOWNLOAD DA IMAGEM
+* docker search <IMAGE>							#BUSCA IMAGENS NO DOCKER HUB
 
-docker search <IMAGE>							#BUSCA IMAGENS NO DOCKER HUB
 
+## [ NETWORK ] 
 
-==============================================> [ NETWORK ] <=================================================
+* docker run <parammeters> <image>:<version> <command>
+**PARAMMETERS:**
+	*--dns <X.X.X.X>								#SETANDO DNS DO CONTAINER
+	*--hostname <name>							#NOME DO CONTAINER
+	*--link <CONTAINER_ID>						#LINKA UM CONTAINER COM O OUTRO
+	*--expose <PORT>								#EXPÕE A PORTA DO CONTAINER
+	*--publish <PORT_HOST>:<PORT_CONTAINER>		#REALIZA O BIND DA PORTA DO HOST COM A DO CONTAINER
+	*--mac-address <XX:XX:XX:XX:XX:XX>			#SETA O ENDEREÇO MAC DO CONTAINER
+	*--net=host/bridge							#SETA AS CONFIGURAÇÕES DE REDES BASEADAS NO HOST
 
-docker run <parammeters> <image>:<version> <command>
-PARAMMETERS:
---dns <X.X.X.X>								#SETANDO DNS DO CONTAINER
---hostname <name>							#NOME DO CONTAINER
---link <CONTAINER_ID>						#LINKA UM CONTAINER COM O OUTRO
---expose <PORT>								#EXPÕE A PORTA DO CONTAINER
---publish <PORT_HOST>:<PORT_CONTAINER>		#REALIZA O BIND DA PORTA DO HOST COM A DO CONTAINER
---mac-address <XX:XX:XX:XX:XX:XX>			#SETA O ENDEREÇO MAC DO CONTAINER
---net=host/bridge							#SETA AS CONFIGURAÇÕES DE REDES BASEADAS NO HOST
 
+## [ DOCKER MACHINE ]
 
-============================================> [ DOCKER MACHINE ] <============================================
+> ESTUDAR MAIS SOBRE DOCKER MACHINE https://docs.docker.com/machine/install-machine/
 
-*ESTUDAR MAIS SOBRE DOCKER MACHINE
+### Instalação para o docker machine Linux:
+1. wget https://github.com/docker/machine/releases/download/v0.14.0/docker-machine-`uname -s`-`uname -m`
+2. mv docker-machine-Linux-x86_64 /usr/local/bin/
+3. chmod +x /usr/local/bin/docker-machine-Linux-x86_64
+4. docker-machine-Linux-x86_64 --version
 
-https://docs.docker.com/machine/install-machine/
+* docker-machine-Linux-x86_64 create --driver virtualbox <name>		
 
-Instalação para o docker machine Linux:
-1) wget https://github.com/docker/machine/releases/download/v0.14.0/docker-machine-`uname -s`-`uname -m`
-2) mv docker-machine-Linux-x86_64 /usr/local/bin/
-3) chmod +x /usr/local/bin/docker-machine-Linux-x86_64
-4) docker-machine-Linux-x86_64 --version
+* docker-machine-Linux-x86_64 env <name>								
 
-docker-machine-Linux-x86_64 create --driver virtualbox <name>		#
+* docker-machine-Linux-x86_64 ssh <name>								
 
-docker-machine-Linux-x86_64 env <name>								#
+* docker-machine-Linux-x86_64 ip <name>								
 
-docker-machine-Linux-x86_64 ssh <name>								#
+* docker-machine-Linux-x86_64 stop <name>								
 
-docker-machine-Linux-x86_64 ip <name>								#
+* docker-machine-Linux-x86_64 start <name>							
 
-docker-machine-Linux-x86_64 stop <name>								#
+* docker-machine-Linux-x86_64 ls 										
 
-docker-machine-Linux-x86_64 start <name>							#
+* docker-machine-Linux-x86_64 rm 										
 
-docker-machine-Linux-x86_64 ls 										#
+## [ DOCKER COMPOSE ] 
 
-docker-machine-Linux-x86_64 rm 										#
+### Install docker-compose:
+1. sudo curl -L https://github.com/docker/compose/releases/download/1.22.0/docker-compose-$(uname -s)-$(uname -m) -o /usr/local/bin/docker-compose
 
-==========================================> [ DOCKER COMPOSE ] <==============================================
+2. sudo chmod +x /usr/local/bin/docker-compose
 
-Install docker-compose:
-1) sudo curl -L https://github.com/docker/compose/releases/download/1.22.0/docker-compose-$(uname -s)-$(uname -m) -o /usr/local/bin/docker-compose
+3. docker-compose --version
 
-2) sudo chmod +x /usr/local/bin/docker-compose
+* build = Indica o caminho do seu Dockerfile
+	* build .
 
-3) docker-compose --version
+* command = Executa um comando
+	*command bundle exec thin -p 3000
 
-#build = Indica o caminho do seu Dockerfile
-build .
+*container_name = Nome para container
+	*container_name: my-web-container
 
-#command = Executa um comando
-command bundle exec thin -p 3000
+*dns = Indica o dns server
+	*dns: 8.8.8.8
 
-#container_name = Nome para container
-container_name: my-web-container
+*dns_search = Especifica um search domain
+	*dns_search: example.com
 
-#dns = Indica o dns server
-dns: 8.8.8.8
+*dockerfile = Especifica um Dockerfile alternativo
+	*dockerfile: Dockerfile-alternate
 
-#dns_search = Especifica um search domain
-dns_search: example.com
+*env_file = Especifica um arquivo com variáveis de ambiente
+	*env_file: .env
 
-#dockerfile = Especifica um Dockerfile alternativo
-dockerfile: Dockerfile-alternate
+*environment = Adiciona variáveis de ambiente
+	*environment:
+		*RACK_ENV: developmnet
 
-#env_file = Especifica um arquivo com variáveis de ambiente
-env_file: .env
+*expose = Expõe a porta do container
+	*expose :
+		*- "3000"
+		*- "8000"
 
-#environment = Adiciona variáveis de ambiente
-environment:
-	RACK_ENV: developmnet
+*external_links = "Linka" containers que não estão especificados no docker-compose atual
+	*external_links:
+		*- redis_1
+		*- project_db_1:mysql
 
-#expose = Expõe a porta do container
-expose :
-	- "3000"
-	- "8000"
+*extra_hosts = Adiciona um entrada no /etc/hosts do container
+		*- "somehost:162.242.195.82"
+		*- "otherhost:50.31.209.229"
 
-#external_links = "Linka" containers que não estão especificados no docker-compose atual
-external_links:
-	- redis_1
-	- project_db_1:mysql
+*image = Indica uma imagem
+	*image: ubuntu:14.04
 
-#extra_hosts = Adiciona um entrada no /etc/hosts do container
-	- "somehost:162.242.195.82"
-	- "otherhost:50.31.209.229"
+*labels = Adiciona metadata ao container
+	*labels:
+		*com.example.description: "Accounting webapp"
+		*com.example.department: "Finance"
 
-#image = Indica uma imagem
-image: ubuntu:14.04
+*links = Linka containers dentro do mesmo docker-compose
+	*links:
+		*- db
+		*- db:database
 
-#labels = Adiciona metadata ao container
-labels:
-	com.example.description: "Accounting webapp"
-	com.example.department: "Finance"
-
-#links = Linka containers dentro do mesmo docker-compose
-links:
-	- db
-	- db:database
-
-#log_driver = Indica o formato do log a ser gerado, por ex: syslog, json-file, etc
-log_driver: syslog
+*log_driver = Indica o formato do log a ser gerado, por ex: syslog, json-file, etc
+	*log_driver: syslog
 	ou
-logging:
-	driver: syslog
+	*logging:
+		*driver: syslog
 
-#log_opt = Indica onde mandar os logs, pode ser local ou em um syslog remoto
-log_opt:
-	syslog-address: "tcp://192.168.0.42:123"
-	ou
-logging:
-	driver: syslog
-	options:
-		syslog-address: "tcp://192.168.0.42:123"
+*log_opt = Indica onde mandar os logs, pode ser local ou em um syslog remoto
+	*log_opt:
+		*syslog-address: "tcp://192.168.0.42:123"
+		ou
+	*logging:
+		*driver: syslog
+		*options:
+			*syslog-address: "tcp://192.168.0.42:123"
 
-#net = Modo de uso da rede
-net: "bridge"
-net: "host"
+*net = Modo de uso da rede
+	*net: "bridge"
+	*net: "host"
 
-#ports = Expõe as portas do container e do host
-ports:
-	- "3000"
-	- "8000:8000"
+*ports = Expõe as portas do container e do host
+	*ports:
+		*- "3000"
+		*- "8000:8000"
 
-#volumes, volume_driver = Monta volumes no container
-volumes:
-	# Just specify a path and let the Engine create a volume
-	- /var/lib/mysql
+*volumes, volume_driver = Monta volumes no container
+	*volumes:
+		* Just specify a path and let the Engine create a volume
+		*- /var/lib/mysql
 
-	# Specify an absolute path mapping
-	- /opt/data:/var/lib/mysql
+	* Specify an absolute path mapping
+		*- /opt/data:/var/lib/mysql
 
-	# Path on the host, relative to the Compose file
-	- ./cache:/tmp/cache
+	* Path on the host, relative to the Compose file
+		*- ./cache:/tmp/cache
 
-#volumes_from = Monta volumes através de outro container
-volumes_from:
-	- service_name
-	- service_name:ro
+*volumes_from = Monta volumes através de outro container
+	*volumes_from:
+		*- service_name
+		*- service_name:ro
 
-==========================================> [ DOCKER MODE SWARM ] <================================================
+## [ DOCKER MODE SWARM ] 
 
