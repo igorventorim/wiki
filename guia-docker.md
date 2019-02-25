@@ -1,22 +1,21 @@
 <!-- TITLE: Guia Docker -->
 <!-- SUBTITLE: Um guia rápido de comandos docker -->
-
-										# ____ ESTUDOS DOCKER ____
 	
 ** [ INSTALAÇÃO DOCKER ] **
 
 Ubuntu:
 
-	#DOCUMENTATION
-	https://docs.docker.com/install/
+#### 	DOCUMENTATION https://docs.docker.com/install/
 
-	#INSTALANDO O DOCKER
-	curl -fsSL https://get.docker.com/ | sh		
+* 	 INSTALANDO O DOCKER
+	`curl -fsSL https://get.docker.com/ | sh		`
 
 
-CentOS:
+* CentOS:
 
-	#Uninstall old versions: 
+	
+```sh
+#Uninstall old versions: 
 	sudo yum remove docker \
 	                  docker-client \
 	                  docker-client-latest \
@@ -27,6 +26,8 @@ CentOS:
 	                  docker-selinux \
 	                  docker-engine-selinux \
 	                  docker-engin
+```
+
 
 	#Install repositories
 	sudo yum install -y yum-utils \
