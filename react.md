@@ -1,4 +1,14 @@
-#TUTORIAL REACT
+---
+title: react
+description: 
+published: true
+date: 2021-04-01T20:49:04.897Z
+tags: 
+editor: markdown
+dateCreated: 2021-04-01T20:46:23.576Z
+---
+
+# TUTORIAL REACT
 
  1 - CRIANDO PROJETO REACT
    - npx create-react-app <PROJECT NAME>
