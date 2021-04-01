@@ -1,6 +1,16 @@
-#PDFBox
+---
+title: pdfbox
+description: 
+published: true
+date: 2021-04-01T20:47:44.752Z
+tags: 
+editor: markdown
+dateCreated: 2021-04-01T20:46:19.038Z
+---
 
-###Components of PDFbox
+# PDFBox
+
+### Components of PDFbox
 - PDFBox: É a parte principal do PDFBox. Contém as classes e interfaces relacionadas ao conteúdo de entração e manipulação.
 
 - FontBox: Contém as classes e interfaces relacionadas a fontes, usando essas classes nós podemos modificar a fonte do texto do documento PDF.
